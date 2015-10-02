@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ocms-utility-navigation</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="ocms-utility-navigation.css">
+    <template id="ocms-utility-navigation">
+
+      <!-- Surely there must be a way to do this with less styles... -->
+      <style>
+        * { box-sizing: border-box; }
+        :host {
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-size: 14px;
+          line-height: 1.42857143;
+          color: #333;
+          background-color: #fff;
+        }
+        a { color: #337ab7; text-decoration: none; background-color: transparent; }
+        button { font-family: inherit; font-size: inherit; line-height: inherit; text-transform: none; -webkit-appearance: button; overflow: visible; cursor: pointer; margin: 0; font: inherit; color: inherit; }
+        ol, ul { margin-top: 0; margin-bottom: 10px; }
+        nav { display: block; }
+        .nav { padding-left: 0; margin-bottom: 0; list-style: none; }
+        .nav > li { position: relative; display: block; }
+        .nav > li > a { position: relative; display: block; padding: 10px 15px; }
+        .navbar { position: relative; min-height: 50px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
+        .navbar-default { background-color: #f8f8f8; border-color: #e7e7e7; }
+        .navbar-default .navbar-brand { color: #777; }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:focus,
+        .navbar-default .navbar-nav > .active > a:hover { color: #555; background-color: #e7e7e7; }
+        .navbar-default .navbar-nav > li > a { color: #777; }
+        .navbar-brand { float: left; height: 50px; padding: 15px 15px; font-size: 18px; line-height: 20px; }
+        .navbar-header { float: left; }
+        .navbar-nav { float: left; margin: 0; }
+        .navbar-nav > li { float: left; }
+        .navbar-nav > li > a { padding-top: 15px; padding-bottom: 15px; }
+        .navbar-nav > li > .dropdown-menu { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+        .navbar-right { float: right!important; margin-right: -15px; }
+        .navbar-collapse { width: auto; border-top: 0; -webkit-box-shadow: none; box-shadow: none; }
+        .navbar-collapse.collapse { display: block!important; height: auto!important; padding-bottom: 0; overflow: visible!important; }
+        .container-fluid { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+        .container-fluid > .navbar-collapse,
+        .container-fluid > .navbar-header { margin-right: 0; margin-left: 0; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0; margin: 2px 0 0; font-size: 14px; text-align: left; list-style: none; background-color: #fff; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0,0,0,.15); border-radius: 4px; -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175); box-shadow: 0 6px 12px rgba(0,0,0,.175); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        [role=button] { cursor: pointer; }
+        .caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-top: 4px solid\9; border-right: 4px solid transparent; border-left: 4px solid transparent; }
+      </style>
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Contributor</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default</a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+    </template>
+    <script>
+    require(['jquery', 'ocms-ui'], function ($, ocms) {
+      var elem = $(this);
+      ocms.register('component', 'ocms-utility-navigation', [], function (content) {
+        console.log('DEBUG: [ocms-utility-navigation]', this);
+      });
+    });
+    </script>
+  </body>
+</html>
