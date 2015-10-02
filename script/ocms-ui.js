@@ -112,6 +112,7 @@
     record.type = type;
     record.dependencies = dependencies;
     record.creatorFn = creatorFn;
+    // We have a creator!!! Go ahead and register element:
     record.resolve(record);
   };
 
