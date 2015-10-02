@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ocms-application</title>
+  </head>
+  <body>
+    <template id="ocms-application">
+      <content></content>
+    </template>
+    <script>
+    require(['ocms-ui'], function (ocmsui) {
+      var template = document.querySelector('ocms-ui');
+      ocmsui.register('component', 'ocms-application', ['dep1', 'dep2'], function (content) {
+        this.version = '0.1.0';
+        console.log('DEBUG: [ocms-application] In register function!', this);
+      });
+    });
+    </script>
+  </body>
+</html>
