@@ -51,14 +51,11 @@
 
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Contributor</a>
-          </div>
+          <header class="navbar-header">
+            <a class="navbar-brand" href="#">Shadow Contributor</a>
+          </header>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -72,20 +69,53 @@
                 </ul>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default</a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
     </template>
     <script>
     require(['jquery', 'ocms-ui'], function ($, ocms) {
-      var elem = $(this);
+
       ocms.register('component', 'ocms-utility-navigation', [], function (content) {
-        console.log('DEBUG: [ocms-utility-navigation]', this);
+        var API = this,
+            template = this.shadow,
+            $API = $(API),
+            $template = $(template);
+
+        function init () {
+          API.brand = $API.find('header').html();
+          Array.prototype.forEach.call($API.find('select optgroup'), function (optgroup) {
+            API.addUtilityGroup(optgroup);
+          })
+        }
+
+        Object.defineProperty(API, 'brand', {
+          'get': function () {
+            return $template.find('.navbar-header').html();
+          },
+          'set': function (val) {
+            $template.find('.navbar-header').html(val).find(':first').addClass('navbar-brand');
+          },
+        }); 
+
+        API.addUtilityGroup = function (optGroup) {
+          optGroup = $(optGroup);
+          var list = $('<ul class="nav navbar-nav">');
+          if (optGroup.hasClass('right')) {
+            list.addClass('navbar-right');
+          }
+          Array.prototype.forEach.call($(optGroup).find('option'), function (option) {
+            var selected = option.selected ? 'class="active"' : '';
+            list.append('<li ' + selected + '><a href="' + option.value + '">' + $(option).text() + '</a></li>');
+          });
+          $template.find('.navbar-collapse').append(list);
+        };
+
+        //elem.find('select option').forEach(function (option) {
+        //  console.log(option);
+        //});
+
+        init.call(API);
       });
     });
     </script>
