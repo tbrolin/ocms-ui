@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>Lab-day demo</title>
+
+<xmp theme="united" style="display:none;">
+  # Web components
+
+  1. `<link rel="import" href="imported.html">`
+
+  2. `document.registerElement(name, options)`
+
+    example:
+
+    ```
+    // default:
+    var MyElement = document.registerElement('my-element');
+    // equivalent to:
+    // document.registerElement('my-element', {
+    //  'prototype': HTMLElement.prototype
+    // });
+
+    var myElement = new MyElement();
+    document.appendChild(myElement);
+
+    // but it doesn't stop there:
+
+    var MyCoolElement = document.registerElement('my-cool-element', {
+        'prototype': Object.create(HTMLElement.prototype, {
+            'createdCallback': function () { console.log('Created element!')},
+            'attachedCallback': function () { console.log('Element attached to DOM!')},
+            'detachedCallback': function () { console.log('Noo, why you not like me?')},
+            'attributeChangedCallback': function () { console.log('One of my attributes was modified!')}
+          });
+      });
+
+    // You can even extend existing elements
+
+    var SpecialButton = document.registerElement('special-button', {
+        'prototype': Object.create(HTMLButtonElement.prototype),
+        'extends': 'button'
+      });
+
+    // used in html like:
+    // <button is="special-button">
+    ```
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement
+
+  3. `<template>` element: Holds html not rendered.
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
