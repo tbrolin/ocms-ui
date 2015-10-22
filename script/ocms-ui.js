@@ -74,11 +74,20 @@
   function loadComponent (path) {
     // console.log('DEBUG: [loadComponent]');
     return fetch (path)
+      // fetch just fetches, we have to check status of response.
       .then (httpStatus)
+      // Get the response as a string. It contains a html document.
       .then (stringify)
+      // Turn the text html into an actual DOM object.
       .then (domify)
+      // Extract all <template> and <script> elements from the document.
       .then (splitDom)
+      // Import scripts into 'our' universe and append them to 'our' document.
+      // Runs the scripts...
       .then (insertScripts)
+      // Store a record in internal registry, containing all that is needed
+      // to be able to create and resolve the element described by template
+      // after a call to ocmsui.register().
       .then (recordClones)
       .then (registerElement)
       .catch (function (err) {
@@ -91,7 +100,8 @@
     return Object.create(HTMLElement.prototype, {
       'createdCallback': {
         value: function () {
-          this.createShadowRoot().appendChild(clone);
+          this.shadow = this.createShadowRoot();
+          this.shadow.appendChild(clone);
           //console.log('DEBUG: [createdCallback] component ', this);
           if (creatorFn) {
             //console.log('calling creatorFn');
@@ -116,14 +126,16 @@
     record.resolve(record);
   };
 
+  // Now we can create the two elements ocms-ui and ocms-import:
+
   recordClones ({ 'templates': Array.prototype.slice.call(templates) });
 
-  ocmsui.register('component', 'ocms-ui', [], function () {
+  ocmsui.register ('component', 'ocms-ui', [], function () {
     //console.log('DEBUG: [ocmsui] Register ocms-ui');
     this.ocmsUiVersion = '0.1.0';
   });
 
-  ocmsui.register('component', 'ocms-import', [], function () {
+  ocmsui.register ('component', 'ocms-import', [], function () {
     //console.log('DEBUG: [ocms-import] Creator called.', this);
     var name = this.getAttribute('src'),
         path = 'components/' + name + '/' + name + '.html';
