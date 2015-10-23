@@ -1,3 +1,3 @@
 # ocms-ui
 
-Experimenting with web components. (Should call it ocms-wc)
+Experimenting with web components. (Should've called it ocms-wc)
