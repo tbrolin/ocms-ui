@@ -87,8 +87,10 @@
       .then (insertScripts)
       // Store a record in internal registry, containing all that is needed
       // to be able to create and resolve the element described by template
-      // after a call to ocmsui.register().
+      // after a call to ocmsui.register(). We wont continue from here until
+      // a call to ocmsui.register() has been made...
       .then (recordClones)
+      // Now we will actually register the element.
       .then (registerElement)
       .catch (function (err) {
         throw 'ERROR: ' + err;

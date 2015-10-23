@@ -5,48 +5,54 @@
 # Web components - short primer/recap
 
 1. `<link rel="import" href="imported.html">`
+New link relationship - import. Imports the specified html document into
+current document.
+
+http://w3c.github.io/webcomponents/spec/imports/
 
 2. `document.registerElement(name, options)`
 
-  example:
+example:
 
-  ```javascript
-  // default:
-  var MyElement = document.registerElement('my-element');
-  // equivalent to:
-  // document.registerElement('my-element', {
-  //  'prototype': HTMLElement.prototype
-  // });
+```javascript
+// default:
+var MyElement = document.registerElement('my-element');
+// equivalent to:
+// document.registerElement('my-element', {
+//  'prototype': HTMLElement.prototype
+// });
 
-  var myElement = new MyElement();
-  document.appendChild(myElement);
+var myElement = new MyElement();
+document.appendChild(myElement);
 
-  // but it doesn't stop there:
+// but it doesn't stop there:
 
-  var MyCoolElement = document.registerElement('my-cool-element', {
-      'prototype': Object.create(HTMLElement.prototype, {
-          'createdCallback': function () { console.log('Created element!')},
-          'attachedCallback': function () { console.log('Element attached to DOM!')},
-          'detachedCallback': function () { console.log('Noo, why you not like me?')},
-          'attributeChangedCallback': function () { console.log('One of my attributes was modified!')}
-        });
-    });
+var MyCoolElement = document.registerElement('my-cool-element', {
+    'prototype': Object.create(HTMLElement.prototype, {
+        'createdCallback': function () { console.log('Created element!')},
+        'attachedCallback': function () { console.log('Element attached to DOM!')},
+        'detachedCallback': function () { console.log('Noo, why you not like me?')},
+        'attributeChangedCallback': function () { console.log('One of my attributes was modified!')}
+      });
+  });
 
-  // You can even extend existing elements
+// You can even extend existing elements
 
-  var SpecialButton = document.registerElement('special-button', {
-      'prototype': Object.create(HTMLButtonElement.prototype),
-      'extends': 'button'
-    });
+var SpecialButton = document.registerElement('special-button', {
+    'prototype': Object.create(HTMLButtonElement.prototype),
+    'extends': 'button'
+  });
 
-  // used in html like:
-  // <button is="special-button">
-  ```
-  https://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement
+// used in html like:
+// <button is="special-button">
+```
+https://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement
 
 3. `<template>` element: Holds html not rendered.
+https://developer.mozilla.org/en/docs/Web/HTML/Element/template
 
 4. Shadow DOM purpose: Isolate a DOM fragment from a 'hosting' DOM.
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
 
 # My little framework
 
@@ -59,7 +65,7 @@ serves, well you know, content...
 This is the reason for the `<ocms-import>` element.
 
 The reasoning behind the `<ocms-ui>` element is that creates an isolate
-top 'scope' for anything it contains.
+top 'scope' for anything it contains. Not sure it is needed though...
 </xmp>
 
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
