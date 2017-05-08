@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="styles/layout.css" rel="stylesheet" type= text/css>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+
+  <title>OCMS Layout</title>
+</head>
+<body>
+
+  <div class="ocms pane">
+    <div class="responsive menu">
+      <nav>
+        <a href="#"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-plus"></i></a>
+      </nav>
+      <nav class="end">
+        <a href="#"><i class="fa fa-power-off"></i></a>
+      </nav>
+      <p class="brand">atex</p>
+    </div>
+
+    <div class="content">
+      <div class="ocms top overlay">
+        <div class="ocms button group">
+          <a href="#"><i class="fa fa-floppy-o"></i> Save</a>
+          <a href="#"><i class="fa fa-times"> </i> Close</a>
+        </div>
+      </div>
+
+      <div class="ocms template view">
+        <nav class="ocms tabbed menu">
+          <a class="active" href="#">Main</a>
+          <a href="#">Metadata</a>
+          <a href="#">Workflow</a>
+        </nav>
+
+
+      </div>
+    </div>
+  </div><!-- ocms pane (1) -->
+
+  <div class="ocms resizable pane">
+    <div>Search Recent Collections</div>
+  </div>
+
+<!--
+  <div class="app-menu">
+    <nav>
+      <a href="#"><i class="fa fa-home"></i></a>
+      <a href="#"><i class="fa fa-plus"></i></a>
+    </nav>
+    <nav class="end">
+      <a href="#"><i class="fa fa-power-off"></i></a>
+    </nav>
+    <p class="logotype">atex</p>
+  </div>
+
+  <div class="main-view">
+    <div class="top-bar">
+      <div class="toolbar">
+        <a class="btn btn-sm btn-primary"><i class="fa fa-floppy-o"></i> Save</a>
+        <a class="btn btn-sm btn-text"><i class="fa fa-times"> </i> Close</a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <section class="template-view">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Main</a></li>
+          <li><a href="#">Metadata</a></li>
+          <li><a href="#">Workflow</a></li>
+        </ul>
+
+        <article class="field">
+          <div class="widgetlabel">title</div>
+          <div class="widget titlewidget" contenteditable="true">Lorem ipsum dolor</div>
+        </article>
+
+        <article id="lead" class="field">
+          <div class="widgetlabel">lead</div>
+          <div class="widget leadwidget" contenteditable="true"><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></div>
+        </article>
+
+        <article id="byline" class="field">
+          <div class="widgetlabel">byline</div>
+          <div class="widget bylinewidget">
+            <p>
+              <img src="http://res.cloudinary.com/demo/image/facebook/billclinton.jpg" height="40" width="40">
+            </p>
+            <p class="name" contenteditable="true">Tobbe Brolin</p>
+            <p class="email" contenteditable="true">tbrolin@atex.com</p>
+          </div>
+        </article>
+
+        <article id="body" class="field">
+          <div class="widgetlabel">body</div>
+          <div class="widget bodywidget" contenteditable="true"><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></div>
+        </article>
+      </section>
+    </div>
+
+    <div class="bottom-bar">
+      bottom-bar
+    </div>
+  </div>
+
+  <div class="tools-panel">
+    <div class="resizehandle">
+    </div>
+
+    <div class="tools">
+      <div class="app-menu">
+        <nav>
+          <a href="#" class="active"><i class="fa fa-search"></i></a>
+          <a href="#"><i class="fa fa-history"></i></a>
+          <a href="#"><i class="fa fa-folder-o"></i></a>
+        </nav>
+      </div>
+
+      <div class="search-field-container">
+        <input class="form-control" type="text" placeholder="Search">
+        <div class="searchResult-entry">
+          <div class="searchResult-thumbnail">
+          </div>
+          <div class="searchResult-title">
+            <a href="#"><strong>Astronomers spot two supermassive black holes orbiting each other</strong></a>
+          </div>
+
+          <div class="searchResult-metaInfo">
+            <div class="searchResult-metaInfo-type">com.atex.standard.article.ArticleBean</div>
+            <div class="searchResult-metaInfo-creationDate">3 days ago</div>
+          </div>
+        </div>
+        <div class="searchResult-entry">
+          <div class="searchResult-thumbnail">
+          </div>
+          <div class="searchResult-title">
+            <a href="#"><strong>Supermassive black hole</strong></a>
+          </div>
+
+          <div class="searchResult-metaInfo">
+            <div class="searchResult-metaInfo-type">com.atex.standard.article.ArticleBean</div>
+            <div class="searchResult-metaInfo-creationDate">3 days ago</div>
+          </div>
+        </div>
+        <div class="searchResult-entry">
+          <div class="searchResult-thumbnail">
+          </div>
+          <div class="searchResult-title">
+            <a href="#"><strong>Black hole</strong></a>
+          </div>
+
+          <div class="searchResult-metaInfo">
+            <div class="searchResult-metaInfo-type">com.atex.standard.article.ArticleBean</div>
+            <div class="searchResult-metaInfo-creationDate">3 days ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</body>
+</html>

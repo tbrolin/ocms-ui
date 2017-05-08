@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <!-- The ocms-foundation sets up the environment for enabling working with -->
+  <!-- ocms-ui components. When it is set up it is possible to load          -->
+  <!-- components from a polopoly system and/or the local file system.       -->
+
+  <!-- The purpose of the ocms-ui element is to be a root host element for   -->
+  <!-- other ocms elements to attach to.                                     -->
+  <head>
+    <title>ocms-foundation</title>
+    <link href="semantic/dist/semantic.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <template id="ocms-ui"><content></content></template>
+    <template id="ocms-import"></template>
+
+    <script src="lib/requirejs/require.js"></script>
+    <!--<script src="lib/page/page.js"></script>-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/fetch/fetch.js"></script>
+    <script src="script/ocms-ui.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+  </body>
+</html>

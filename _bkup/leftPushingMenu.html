@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Left pushout menu</title>
+  <link rel="stylesheet" href="semantic/dist/semantic.min.css">
+</head>
+<body>
+
+<div class="ui fixed left sidebar">
+  <nav class="ui vertical menu">
+    <a class="item">Sidebar</a>
+  </nav>
+</div>
+
+<p class="ui fixed">
+  <a class="ui button" onclick="$('.left.sidebar').sidebar('toggle');">
+    <i class="ui pencil icon"></i>Menu
+  </a>
+</p>
+
+<div class="ui pusher">
+ <p class="ui message">MAIN CONTENT GOES HERE</p>
+</div>
+
+
+<!--  <div class="ui two column internally celled grid" style="height:100%;">
+    <div class="ui row">
+      <div class="ui column inverted labeled vertical icon menu">
+        &lt;!&ndash;<nav class="ui vertical icon menu">&ndash;&gt;
+          <a class="ui labeled item" onclick="setActive();">
+            <i class="ui plus icon"></i>
+            New...
+          </a>
+          <a class="ui item" onclick="setActive();">
+            <i class="ui mini pencil icon"></i>
+            Edit...
+          </a>
+          <a class="ui item active" onclick="setActive();">
+            <i class="ui mini search icon"></i>
+            Search...
+          </a>
+        &lt;!&ndash;</nav>&ndash;&gt;
+      </div>
+      <div class="ui transition column">
+        <p>Hej på er allihopa</p>
+      </div>
+    </div>
+  </div>-->
+
+
+
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+  <script>
+    function setActive() {
+      /*console.log('element', this);
+      $('.ui.item').removeClass('active');
+      $(this).addClass('active')*/
+      $('.ui.transition.column').transition('slide right');
+    }
+  </script>
+</body>
+</html>
