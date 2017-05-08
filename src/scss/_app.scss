@@ -1,0 +1,67 @@
+html,
+body {
+  height: 100%;
+  // min-width: 1024px;
+  margin: 0;
+
+  display: flex;
+  flex-flow: column;
+
+  color: $primary-text;
+  background-color: #FEFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.ui-admin {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  &.head {
+    flex: 0 55px;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    z-index: 3;
+    position: relative;
+
+    border-bottom: 1px solid $navbar-border-color;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    background-color: $navbar-bg-color;
+
+    cursor: default;
+    color: $navbar-color;
+
+    .logo {
+      padding: 0 30px;
+      align-self: center;
+    }
+
+    .actions {
+      flex: 1;
+      display: flex;
+    }
+  }
+
+  &.body {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+  }
+}
+.ui-view {
+  padding: 0 1.5em;
+  .panel {
+    width: 18em;
+  }
+}

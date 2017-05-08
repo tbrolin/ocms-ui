@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <base href="/">
+    <title>Angular QuickStart JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="scss/styles.css">
+
+    <!-- onecms-lib
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/onecms-lib/dist/onecms-lib-service-core-3.2.3-ACE-min.js"></script>
+    <script src="node_modules/onecms-lib/dist/onecms-lib-service-angular-3.2.3-ACE-src.js"></script>-->
+
+    <script src="node_modules/underscore/underscore.js"></script>
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/@angular/core/bundles/core.umd.js"></script>
+    <script src="node_modules/@angular/common/bundles/common.umd.js"></script>
+    <script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
+    <!--<script src="node_modules/@angular/upgrade/bundles/upgrade-static.umd.js"></script>-->
+    <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="node_modules/@angular/router/bundles/router.umd.js"></script>
+    <script src="node_modules/@angular/http/bundles/http.umd.js"></script>
+
+    <!-- 2. Load our 'modules' -->
+    <script src="backend/module.backend.js"></script>
+    <script src="backend/service.backend.js"></script>
+    <script src="app/component.metadata.js"></script>
+    <script src="app/component.users.js"></script>
+    <script src="app/component.roles.js"></script>
+    <script src="app/component.authenticate.js"></script>
+    <script src="app/component.admin.js"></script>
+    <script src="app/module.routes.js"></script>
+    <!--<script src="app/upgraded.providers.js"></script>-->
+    <script src='app/module.admin.js'></script>
+
+    <script src='main.js'></script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <ui-admin class="ui-admin">Loading...</ui-admin>
+  </body>
+
+</html>

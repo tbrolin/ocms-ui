@@ -1,0 +1,7 @@
+{
+  "service": {
+    "common": {
+      "baseUrl": "/ace"
+    }
+  }
+}

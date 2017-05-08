@@ -1,0 +1,59 @@
+// Font-awesome
+$fa-font-path: "../node_modules/font-awesome/fonts";
+
+// Colors:
+$code-green-color: #67a127;
+$code-blue-color: #458ce0;
+$code-grey-light-color: #f3f3f3;
+$code-grey-light-color-0-5-opacity: rgba(243, 243, 243, .5);
+$code-grey-color: #d8d8d8;
+$code-grey-dark-color: #858585;
+$code-black-color: #000;
+$code-white-color: #fff;
+$code-white-dark-color: #fafafa;
+
+/*still used by latest content on dashboard*/
+$code-nav-bar-width: 360px;
+
+$brand-primary: $code-green-color;
+$primary-text: $code-black-color;
+$secondary-text: #A0A0A0;
+$muted-text: #B9B9B9;
+$primary-color: $code-blue-color;
+$error-color: #d0021b;
+$warning-color: #f5a623;
+$success-color: #14ab30;
+
+$navbar-bg-color: #767676;
+$navbar-border-color: #4d4d4d;
+$navbar-color: $code-white-color;
+$navbar-color-hover: $code-grey-light-color;
+
+$content-information-bg-color: $code-grey-color;
+
+$active-entry-background-color: $code-grey-light-color;
+
+$tabs-background-color: #CEEAEB;
+$editor-field-divider-color: #979797;
+$selected-entry-bg: #979797;
+$selected-entry-color: #fff;
+$editor-background-color: $code-grey-light-color;
+$divider-color: $code-grey-color;
+$form-control-main-color: #F4F5F6;
+$form-control-label-color: #9bd2d2;
+$btn-primary-bg: #65a218;
+$btn-primary-bg-hover: lighten($btn-primary-bg, 5%);
+$btn-default-bg: transparent;
+$btn-default-color: #000;
+$btn-link-color: $code-black-color;
+
+$nav-section-divider-color: $code-grey-light-color;
+$nav-section-light-divider-color: transparentize($code-grey-light-color, .5);
+$btn-secondary-bg: transparent;
+$btn-warning-bg: transparent;
+
+$btn-font-weight: 300;
+
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
