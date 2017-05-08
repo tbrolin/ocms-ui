@@ -1,6 +1,2 @@
-# Application developmen
+# Experimenting with angular and ace
 Create a npm project.
-Add angular deps.
-
-
-Add application configuration
